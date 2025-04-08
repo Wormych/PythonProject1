@@ -40,4 +40,8 @@ def audio(message):
     music = open('Rammstein - Ich Will.mp3', 'rb')
     bot.send_audio(message.chat.id, music)
 
+@bot.message_handler(commands=["help"])
+def welcome(message):
+    bot.send_message(message.chat.id, "/music,/film,/book,/sport,/friends")
+
 bot.polling()
